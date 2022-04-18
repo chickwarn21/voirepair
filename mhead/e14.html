@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<head>
+<style>
+.w3-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.h2 {
+     position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 7vw; 
+   padding: 1%;
+   bottom: 1px;
+   color:rgb(255, 255, 255);
+   left: 22%; 
+    display: flex;
+    flex-wrap: wrap; }
+
+  .h3{
+    text-align: center;
+    padding-top: 10px;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 3vw; 
+   color:rgb(255, 255, 255);
+   left: 30%; 
+    display: flex;
+    flex-wrap: wrap;
+
+    }
+ /*logo placement*/
+ .top-left {
+  position: relative;
+ 
+  width: 11%;
+  height: 11%;
+  top: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+ .top-right2 {
+  text-decoration: none;
+  position: relative;
+   top: 0%;
+   width: auto;
+   height: 10%;
+  left: 45%;
+  font-size: 200%;
+  font-family: "Montserrat" ; 
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color:rgb(244, 108, 99);
+  display: flex;
+    flex-wrap: wrap;
+    }
+
+.pic{
+position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+
+}
+
+ 
+video {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 1px 2px;
+  position: absolute;
+  top: 0;
+  left: 75%;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table.roundedCorners { 
+  border: 1px solid black;
+  border-radius: 10px; 
+  border-spacing: 0;
+  box-shadow: 3px 3px 3px #999;
+  text-align: center;
+  }
+table.roundedCorners td, 
+table.roundedCorners th { 
+  border-bottom: 1px solid black;
+  padding: 7px; 
+  text-align: center;
+  
+  }
+table.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+
+/* tabs on each side */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+ 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+</style>
+<title>PDF Viewer</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf_viewer.min.js"></script>
+
+<body>
+  <div style="padding-top: 1%;"></div>
+  <div class="w3-container" style="background-color: rgb(244, 108, 99);">
+ <img class="top-left" src="..\images\logo.png" onclick="window.location.href= '../mRepair_guide.html'" alt="VOI">
+  <div class="h2" ><b>Error 14</b> </div>
+    <a class="top-right2" href="../mhead/head.html"><b> &#8249;</b></a>
+    </div>
+    <div style="padding: 5%;"></div>
+   <h3 style="text-align:center"><b>Abnormal accelerator Hall</b></h3> 
+
+  </div>
+
+  <div style="padding: 5%;"></div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">Trouble</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Yes</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">No</button>
+    <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+  </div>
+  
+  <div id="London" class="tabcontent">
+    
+    <ul>
+      <li>Check if scooter is running</li>
+     <!--<li>screw driver: W&#252;rth - 613434810</li>
+      <li>Long TX 10 Bit: W&#252;rth - 06143710</li>
+      <li>Bit Holder: W&#252;rth - 0614176702</li>
+      <li>Long TX 20 Bit : W&#252;rth - 06143720</li>
+      <li>TX 25 Bit: W&#252;rth - 06143725</li>
+      <li>Screw machine: W&#252;rth - 5701101002</li>
+      <li>Gloves: W&#252;rth - 899400619</li>-->
+        </ul>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <ul>
+      <li>Change the Dashboard</li>
+     <!-- <li>Dashboard Sticker : NBM-AB.50.0003.63</li>
+      <li>M3x12 Screw:  NBM-14.01.0475.00</li>
+      <li>M4x10 Screw: NBM-00.00.0000.05A</li>
+      <li>M5x16 Screw: NBM-AB.00.0019.05</li>-->
+    </ul>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <ul>
+      <li>Change the Throttle. If Error code 14 is still there change the Dashboard</li>
+      <!--<li>M4x10 Screws = 1.8 &#177; 0.1Nm</li>
+      <li>M5x16 Screws = 4 <span>&#177;</span>0.5Nm</li>-->
+    </ul>
+  </div>
+
+  <div id="Notes" class="tabcontent">
+    <ul >
+      <li>Points to remember</li>
+    </ul>
+  </div>
+  <!-- PDF viewer 
+  <div id="my_pdf_viewer">
+    <div id="canvas_container">
+      <canvas id="pdf_renderer"></canvas>
+    </div>
+  <div id="navigation-controls">
+    <button id="go_previous">Previous</button>
+    <input type="number" value="1" id="current_page">
+    <button id="go_next">Next</button>
+  </div>
+  <div id="zoom-controls">
+    <button id="zoom_in">+</button>
+    <button id="zoom_out">-</button>
+  </div>-->
+
+  <!-- Video Player -->
+    <div class="vi">
+    <h3 style="text-align: center;padding-top: 5%;"><b>Video</b></h3>
+        <video controls src="../mhead/mpics/mobile_holder/phone_holder_mobile.mp4" type="video/mp4" controls controlsList="nodownload">
+      Your browser does not support HTML video.
+  </video>
+</div>
+
+    
+    <div style="padding: 5%;"></div>
+
+  <script>
+  
+  var videoPlayer = document.getElementById('videoPlayer');
+   
+       // Auto play, half volume.
+       videoPlayer.play()
+       videoPlayer.volume = 0.5;
+   
+       // Play / pause.
+       videoPlayer.addEventListener('click', function () {
+           if (videoPlayer.paused == false) {
+               videoPlayer.pause();
+               videoPlayer.firstChild.nodeValue = 'Play';
+           } else {
+               videoPlayer.play();
+               videoPlayer.firstChild.nodeValue = 'Pause';
+           }
+       });
+
+ function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+
+
+
+</body>
+<script>
+  var myState = {
+    pdf:null,
+    currentPage:1,
+    zoom:1
+  }
+  pdfjsLib.getDocument("..\mhead\mpics\error_14\example.pdf").then(pdf => {
+    myState.pdf = pdf
+    render()
+  })
+
+  function render(){
+    myState.pdf.getPage(myStage.currentPage).then(page => {
+      var canvas = document.getElementById("pdf_renderer")
+      var ctx = canvas.getContext("2d")
+      var viewport = page.getViewport(myState.zoom)
+
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+
+      // rendering the page
+
+      page.render({
+        canvascontext:ctx,
+        viewport:viewport
+      })
+    })
+  }
+</script>
+</html>

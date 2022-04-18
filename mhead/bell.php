@@ -1,0 +1,665 @@
+<?php 
+session_start();
+
+	include("../validate.php");
+	include("../func.php");
+
+	$user_data = check_login($con);
+
+?>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<head>
+<style>
+.w3-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flow{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h2 {
+     position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 7vw; 
+   padding: 1%;
+   bottom: 1px;
+   color:rgb(255, 255, 255);
+   left: 27%; 
+    display: flex;
+    flex-wrap: wrap; }
+
+  .h3{
+      position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 3vw; 
+  
+   color:rgb(255, 255, 255);
+   left: 30%; 
+    display: flex;
+    flex-wrap: wrap;
+
+
+    }
+ 
+ .top-left {
+  position: relative;
+ 
+  width: 11%;
+  height: 11%;
+  top: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.main-pic {
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+    flex-wrap: wrap;
+}
+
+ .top-right2 {
+  text-decoration: none;
+  position: relative;
+   top: 0%;
+   width: auto;
+   height: 10%;
+  left: 60%;
+  font-size: 200%;
+  font-family: "Montserrat" ; 
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color:rgb(244, 108, 99);
+  display: flex;
+    flex-wrap: wrap;
+    }
+
+.pic{
+position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+
+}
+
+ 
+video {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 1px 2px;
+  position: absolute;
+  bottom: 99.3%;
+  left: 75%;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table.roundedCorners { 
+  border: 1px solid black;
+  border-radius: 10px; 
+  border-spacing: 0;
+  box-shadow: 3px 3px 3px #999;
+  text-align: center;
+  }
+table.roundedCorners td, 
+table.roundedCorners th { 
+  border-bottom: 1px solid black;
+  padding: 7px; 
+  text-align: center;
+  
+  }
+table.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+
+/* tabs on each side */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+ 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content dropdown */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.doc{
+  align-items: center;
+  
+  width: 100%;
+  height: 300px;
+}
+
+.bot {
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat" ; 
+  background-color: rgb(244, 108, 99);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  
+}
+
+</style>
+</head>
+<body>
+  <div style="padding-top: 1%;"></div>
+  <div class="w3-container" style="background-color: rgb(244, 108, 99);">
+ <img class="top-left" src="..\images\logo.png" onclick="window.location.href= '../mRepair_guide.html'" alt="VOI">
+  <div class="h2" ><b>Bell</b> </div>
+    <a class="top-right2" href="../mhead/head.html"><b> &#8249;</b></a>
+    </div>
+
+    <div style="padding: 3%;"></div>
+   <img class="pic" src="../mhead/mpics/bell/bell.png" alt="VOI">
+  
+   <h3 style="text-align:center"><b>Repair Flow</b></h3> 
+
+  <div class="row">
+    <div class="column">
+      <img src="../mhead/mpics/bell/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/bell/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/bell/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/bell/4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+      </div>
+  </div>
+  
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>1 / 17</b></div>
+        <img src="../mhead/mpics/bell/1.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>2 / 17</b></div>
+        <img src="../mhead/mpics/bell/2.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>3 / 17</b></div>
+        <img src="../mhead/mpics/bell/3.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>4 / 17</b></div>
+        <img src="../mhead/mpics/bell/4.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>5 / 17</b></div>
+        <img src="../mhead/mpics/bell/5.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>6 / 17</b></div>
+        <img src="../mhead/mpics/bell/6.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>7 / 17</b></div>
+        <img src="../mhead/mpics/bell/7.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>8 / 17</b></div>
+        <img src="../mhead/mpics/bell/8.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>9 / 17</b></div>
+        <img src="../mhead/mpics/bell/9.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>10 / 17</b></div>
+        <img src="../mhead/mpics/bell/10.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>11 / 17</b></div>
+        <img src="../mhead/mpics/bell/11.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>12 / 17</b></div>
+        <img src="../mhead/mpics/bell/12.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>13 / 17</b></div>
+        <img src="../mhead/mpics/bell/13.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>14 / 17</b></div>
+        <img src="../mhead/mpics/bell/14.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>15 / 17</b></div>
+        <img src="../mhead/mpics/bell/15.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>16 / 17</b></div>
+        <img src="../mhead/mpics/bell/16.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>17 / 17</b></div>
+        <img src="../mhead/mpics/bell/17.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+  
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Remove the end cap M4x14 screw with TX 20 bit and remove the end cap.">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Take off the Indicator and unplug it (be careful not to damage the cable and for the right side make sure not to make short in the connector 
+        pins)">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Take off the handlebar grip either by hand or use the grip removal tool">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Take out the small screw from the alu-stop with a Hex 2.5 bit. Remove the stop and remove 
+        then the broken bell">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/7.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/8.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/9.jpg" style="width:100%" onclick="currentSlide(3)" alt="Place a new bell back on the handlebar">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/10.jpg" style="width:100%" onclick="currentSlide(4)" alt="Place back the alu-stop and put back the screw with a Hex 2.5 bit">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/11.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/12.jpg" style="width:100%" onclick="currentSlide(6)" alt="Place back the handlebar grip">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/13.jpg" style="width:100%" onclick="currentSlide(1)" alt="Plug in the indicator and push the plug into the handle while pushing the indicator into 
+        place (be careful not to damage the cable or to make a short in the connector pins.) ">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/14.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/15.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/16.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/bell/17.jpg" style="width:100%" onclick="currentSlide(5)" alt="Place the end cap back on and put it in place with the end cap screw">
+      </div>
+      </div>
+  </div>
+
+  <div style="padding: 5%;"></div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">Tools</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Parts</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Torque</button>
+    <button class="tablinks" onclick="openCity(event, 'SOP')">Notes</button>
+  </div>
+  
+  <div id="London" class="tabcontent">
+    
+    <ul>
+      <li>Bit Holder: W&#252;rth - 0614176702</li>
+      <li>TX 20 Bit : W&#252;rth - 0614352620 </li>
+      <li>Steel Spatula : Amazon - </li>
+      <li>Screw Driver : W&#252;rth - 613434810 </li>
+      <li>Handlebar Replacement Tool : Netsuite - 14.01.0209.00</li>
+      <li>Screw machine: W&#252;rth - 5701101002</li>
+      <li>Gloves: W&#252;rth - 899400619</li>
+        </ul>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <ul>
+      <li>Bell: NBM-14.01.0447.00</li>
+      <li>M4x8 Screws : NBM-14.01.0347.00</li>
+    </ul>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <ul >
+      <li>M4x8 Screws = 1.2 &#177; 0.2Nm</li>
+    </ul>
+  </div>
+
+  <div id="SOP" class="tabcontent">
+
+    <ul >
+      <li>Points to remember</li>
+    </ul>
+
+    </div>
+  
+
+    <div class="vi">
+    <h3 style="text-align: center;padding-top: 5%;"><b>Video</b></h3>
+        <video controls src="../mhead/mpics/bell/bell_video.mp4" type="video/mp4" controls controlsList="nodownload">
+      Your browser does not support HTML video.
+  </video>
+</div>
+
+<div class="vi">
+  <h3 style="text-align: center;padding-top: 5%;"><b>Torque</b></h3>
+      <video controls src="../mhead/mpics/bell/bell_video.mp4" type="video/mp4" controls controlsList="nodownload">
+    Your browser does not support HTML video.
+</video>
+</div>
+
+<div class="doc">
+  <h3 style="text-align: center;padding-top: 5%;"><b>SOP</b></h3>
+<iframe src="https://drive.google.com/file/d/1HKscN6PQPL-lvBpu7zgo6_NQXWjABL-s/preview" width="100%" height="300px" ></iframe>
+</div> 
+
+<div style="padding: 23%;"></div>
+
+<div  class="bot" >
+  <p>&#169; 2022 <i>All rights reserved Voi Technology AB.</i><br>
+  Creators <a style="text-decoration: none; color:rgb(255, 255, 255);" href= "https://app.hibob.com/employee-profile/2338686568232910967"><b>Tommy Høeg</b></a> 
+  &<a href="https://app.hibob.com/employee-profile/2760433236394901522" style="text-decoration: none; color: rgb(255, 255, 255);"> <b>Karthik Lokesh</b></p>
+</div>
+
+  <script>
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
+  var videoPlayer = document.getElementById('videoPlayer');
+   
+       // Auto play, half volume.
+       videoPlayer.play()
+       videoPlayer.volume = 0.5;
+   
+       // Play / pause.
+       videoPlayer.addEventListener('click', function () {
+           if (videoPlayer.paused == false) {
+               videoPlayer.pause();
+               videoPlayer.firstChild.nodeValue = 'Play';
+           } else {
+               videoPlayer.play();
+               videoPlayer.firstChild.nodeValue = 'Pause';
+           }
+       });
+
+ function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+
+</body>
+</html>

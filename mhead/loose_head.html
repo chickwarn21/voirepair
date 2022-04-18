@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<head>
+<style>
+.w3-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flow{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h2 {
+     position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 7vw; 
+   padding: 1%;
+   bottom: 1px;
+   color:rgb(255, 255, 255);
+   left: 17%; 
+    display: flex;
+    flex-wrap: wrap; }
+
+  .h3{
+      position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 3vw; 
+  
+   color:rgb(255, 255, 255);
+   left: 30%; 
+    display: flex;
+    flex-wrap: wrap;
+
+
+    }
+ 
+ .top-left {
+  position: relative;
+ 
+  width: 11%;
+  height: 11%;
+  top: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.main-pic {
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+    flex-wrap: wrap;
+}
+
+ .top-right2 {
+  text-decoration: none;
+  position: relative;
+   top: 0%;
+   width: auto;
+   height: 10%;
+  left: 30%;
+  font-size: 200%;
+  font-family: "Montserrat" ; 
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color:rgb(244, 108, 99);
+  display: flex;
+    flex-wrap: wrap;
+    }
+
+.pic{
+position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+
+}
+
+ 
+video {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 1px 2px;
+  position: absolute;
+  bottom: 99.3%;
+  left: 75%;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table.roundedCorners { 
+  border: 1px solid black;
+  border-radius: 10px; 
+  border-spacing: 0;
+  box-shadow: 3px 3px 3px #999;
+  text-align: center;
+  }
+table.roundedCorners td, 
+table.roundedCorners th { 
+  border-bottom: 1px solid black;
+  padding: 7px; 
+  text-align: center;
+  
+  }
+table.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+
+/* tabs on each side */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+ 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content dropdown */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+</style>
+</head>
+<body>
+  <div style="padding-top: 1%;"></div>
+  <div class="w3-container" style="background-color: rgb(244, 108, 99);">
+ <img class="top-left" src="..\images\logo.png" onclick="window.location.href= '../mRepair_guide.html'" alt="VOI">
+  <div class="h2" ><b>Dashboard</b> </div>
+    <a class="top-right2" href="../mhead/head.html"><b> &#8249;</b></a>
+    </div>
+
+    <div style="padding: 3%;"></div>
+   <img class="pic" src="../mhead/mpics/dashboard/dashboard.jpg" alt="VOI">
+  
+   <h3 style="text-align:center"><b>Repair Flow</b></h3> 
+
+  <div class="row">
+    <div class="column">
+      <img src="../mhead/mpics/dashboard/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/dashboard/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/dashboard/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="../mhead/mpics/dashboard/4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+      </div>
+  </div>
+  
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>1 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/1.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>2 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/2.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>3 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/3.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>4 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/4.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>5 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/5.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>6 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/6.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>7 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/7.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>8 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/8.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>9 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/9.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>10 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/10.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>11 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/11.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>12 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/12.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>13 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/13.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>14 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/14.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>15 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/1a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>16 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/2a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>17 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/3a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>18 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/4a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>19 /37</b></div>
+        <img src="../mhead/mpics/dashboard/5a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>20 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/6a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>21 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/7a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>22 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/8a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>23 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/9a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>24 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/10a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>25 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/11a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>26 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/12a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>27 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/13a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>28 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/14a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>29 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/15a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>30 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/16a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>31 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/17a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>32 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/18a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>33 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/19a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>34 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/20a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>35 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/21a.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext"><b>36 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/22a.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext"><b>37 / 37</b></div>
+        <img src="../mhead/mpics/dashboard/23a.jpg" style="width:100%">
+      </div>
+
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+  
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Take off the Dashboard Sticker With the Spatula">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Remove the 3 Dashboard (M3x12) screws With the TX 10 Screw Driver ">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Open the Dashboard And bring it to the Side">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Use a side cutter to remove the 2 cable ties.">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Pull the the rubber cylinder back to expose the wire connections.">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Take out the Vehicle Head Neck Screw M5x16. with a TX 25 Bit">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/7.jpg" style="width:100%" onclick="currentSlide(7)" alt="take out the two M7x20 screws holding the head assembly. Use a TX 30 bit">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Remove the three IOT M6x20 Screws with a TX 30 bit">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/9.jpg" style="width:100%" onclick="currentSlide(9)" alt="Unmount the IOT by carefully angle out the bottom of the IOT and slightly pull it down. After unmounted then unplug the 2 cables">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/10.jpg" style="width:100%" onclick="currentSlide(10)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/11.jpg" style="width:100%" onclick="currentSlide(11)" alt="Unplug all the wires for the Dashboard">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/12.jpg" style="width:100%" onclick="currentSlide(12)" alt="">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/13.jpg" style="width:100%" onclick="currentSlide(13)" alt="Pull up the head assembly exposing the dashboard cable. Then pull up the dashboard cable and take off the dashboard">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/14.jpg" style="width:100%" onclick="currentSlide(14)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/15.jpg" style="width:100%" onclick="currentSlide(15)" alt="Using a homemade fishing cable from a old plug and a inner brake cable wire.  Fish the dashboard cable back down to the IOT.  ">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/16.jpg" style="width:100%" onclick="currentSlide(16)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/17.jpg" style="width:100%" onclick="currentSlide(17)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/18.jpg" style="width:100%" onclick="currentSlide(18)" alt="">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/19.jpg" style="width:100%" onclick="currentSlide(19)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/20.jpg" style="width:100%" onclick="currentSlide(20)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/21.jpg" style="width:100%" onclick="currentSlide(21)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/22.jpg" style="width:100%" onclick="currentSlide(22)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/23.jpg" style="width:100%" onclick="currentSlide(23)" alt="Press the head back. Note: make sure the brake cable connectors are turned plastic to plastic to take as little space. Also a good thing is to pull to brake levers while pushing down. Connect then the cables">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/24.jpg" style="width:100%" onclick="currentSlide(24)" alt="">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/25.jpg" style="width:100%" onclick="currentSlide(25)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/26.jpg" style="width:100%" onclick="currentSlide(26)" alt="Add the gray plug protection and place them nicely in the head. Add then the Dashboard.">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/1a.jpg" style="width:100%" onclick="currentSlide(27)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/2a.jpg" style="width:100%" onclick="currentSlide(28)" alt="Mount the 3 Dashboard M3x12 screws with a TX 10 screw driver">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/3a.jpg" style="width:100%" onclick="currentSlide(29)" alt="Add a working Dashboard sticker">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/4a.jpg" style="width:100%" onclick="currentSlide(30)" alt="Add the Vehicle Head Neck Screw M5x16. with a TX 25 Bit.  Note: make sure to start the screw by hand before using the screw machine">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/5a.jpg" style="width:100%" onclick="currentSlide(31)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/6a.jpg" style="width:100%" onclick="currentSlide(32)" alt="Add the two M7x20 screws holding the head assembly. Use a TX 30 bit">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/7a.jpg" style="width:100%" onclick="currentSlide(33)" alt="Reconnect the IOT by connecting the IOT Cable and the Dashboard cable. When placing back the IOT make sure not to brake or damage any cables. ">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/8a.jpg" style="width:100%" onclick="currentSlide(34)" alt="">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/9a.jpg" style="width:100%" onclick="currentSlide(35)" alt="Look throw the IOT Screw holes to make sure there are no cables in the way which otherwise will get damaged when mounting the IOT. Then add the 3 (M6x20) screws and make sure NOT to overtighten">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/10a.jpg" style="width:100%" onclick="currentSlide(36)" alt="">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../mhead/mpics/front_light/11a.jpg" style="width:100%" onclick="currentSlide(37)" alt="">
+      </div>
+      </div>
+  </div>
+
+  <div style="padding: 5%;"></div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">Tools</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Parts</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Torque</button>
+    <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+  </div>
+  
+  <div id="London" class="tabcontent">
+    
+    <ul>
+      <li>Long TX 10 bit: W&#252;rth - 06143710</li>
+     <li>TX 10 Screw Driver: W&#252;rth - 613434810</li>
+      <li>Short TX 25 bit: W&#252;rth - 06143725</li>
+      <li>Short TX 30 bit: W&#252;rth - 0614352630</li>
+      <li>Side Cutter: W&#252;rth - 071401567</li>
+      <li>Long Nose Plier: W&#252;rth - 071401562</li>
+      <li>Steel Spatula: Amazon</li>
+      <li>Bit Holder: W&#252;rth - 0614176702</li>
+      <li>Screw machine: W&#252;rth - 5701101002</li>
+      <li>Gloves: W&#252;rth - 899400619</li>
+    </ul>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <ul>
+      <li>Dashboard: NBM-AB.50.0003.15</li>
+      <li>Dashboard Sticker: NBM-AB.50.0003.63</li>
+      <li>M5x16 Vehicle Head Neck Screw :  NBM-AB.00.0005.79</li>
+      <li>M7x20 Screws : NBM-AB.00.0013.14</li>
+      <li>M6x20 IOT Screws : NBM-AB.50.0003.47</li>
+      <li>M4x12 Front Light Bracket Screws : NBM</li>
+      <li>M3x12 Dashboard Screws : NBM-14.01.0475.00</li>
+    </ul>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <ul >
+      <li>M5x16 Screw= 5-6Nm</li>
+      <li>M7x20 Screws = 8-10Nm</li>
+      <li>M6x20 Screws = 4-5Nm</li>
+      <li>M3x12 Screws = 0.8 &#177; 0.1Nm</li>
+      <li>M4x12 Screws = 1.8 &#177; 0.2Nm</li>
+    </ul>
+  </div>
+
+  <div id="Notes" class="tabcontent">
+    <ul >
+      <li>Error code <a href="e10.html">10</a> </li>
+    </ul>
+  </div>
+
+    <div class="vi">
+    <h3 style="text-align: center;padding-top: 5%;"><b>Video</b></h3>
+        <video controls src="../mhead/mpics/dashboard/dashboard.mp4" type="video/mp4" controls controlsList="nodownload">
+      Your browser does not support HTML video.
+  </video>
+</div>
+
+    
+    <div style="padding: 5%;"></div>
+
+  <script>
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
+  var videoPlayer = document.getElementById('videoPlayer');
+   
+       // Auto play, half volume.
+       videoPlayer.play()
+       videoPlayer.volume = 0.5;
+   
+       // Play / pause.
+       videoPlayer.addEventListener('click', function () {
+           if (videoPlayer.paused == false) {
+               videoPlayer.pause();
+               videoPlayer.firstChild.nodeValue = 'Play';
+           } else {
+               videoPlayer.play();
+               videoPlayer.firstChild.nodeValue = 'Pause';
+           }
+       });
+
+ function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+
+
+</body>
+</html>

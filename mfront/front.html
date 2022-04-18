@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<head>
+<style>
+.w3-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Head Line */
+.h2 {
+     position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 7vw; 
+   padding: 1%;
+   bottom: 1px;
+   color:rgb(255, 255, 255);
+   left: 28%; 
+    display: flex;
+    flex-wrap: wrap; }
+ 
+ .top-left {
+  position: relative;
+  
+  width: 11%;
+  height: 11%;
+  top: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.main-pic {
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+    flex-wrap: wrap;
+}
+/* Back arrow */
+.top-right2 {
+  text-decoration: none;
+  position: relative;
+   top: 0%;
+   width: auto;
+   height: 0%;
+  left: 55%;
+  font-size: 200%;
+  font-family: "Montserrat" ; 
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color:rgb(244, 108, 99);
+  display: flex;
+    flex-wrap: wrap;
+    }
+
+
+    .pic-menu{
+      display: flex;
+    flex-wrap: wrap;
+    
+    }
+
+    .overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  font-family: 'Montserrat';
+  background-color:rgb(244, 108, 99);
+  background-color: rgb(244, 108, 99);
+}
+
+.overlay-content {
+  position: relative;
+  border-radius: 12%;
+  top: 14%; /* expandable moves*/
+  width: 100%;
+  text-align: center;
+  
+}
+
+.overlay a {
+  padding: 5px;
+  border-radius: 12%;
+  text-decoration: none;
+  font-size: 16px; /* expandable font*/
+  color: #f7f5f5;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #3b3838;
+  
+
+}
+
+.overlay .closebtn {
+  position: absolute;
+  bottom: 85%;
+  right: 7%;
+  font-size: 75px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size:45px;
+  bottom: 85;
+  right: 7%;
+  }
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 7px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 170%;
+  
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+ 
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  
+}
+
+.active:after {
+  content: "\2212";
+  
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: rgb(224, 144, 138) ;
+  font-size: 15px;
+}
+
+  </style>
+  </head>
+  <body>
+    <div style="padding-top: 1%;"></div>
+    <div class="w3-container" style="background-color: rgb(244, 108, 99);">
+   <img class="top-left" src="..\images\logo.png" onclick="window.location.href='../mRepair_guide.html'" alt="VOI">
+    <div class="h2"><b>Neck</b> </div>
+            <a class="top-right2" href="../mRepair_guide.html"> <b> &#8249;</b></a>
+
+    </div>
+  
+    <div class="pic-menu" style="font-size: 10px;">
+  <img class="main-pic" usemap="#head" src="../mneck/mpics/second landing mobil_neck.png"   alt="VOI">
+      <map name="head">
+        <area shape="rect" coords="121,604,187,643" alt="voi" title="SIDE REFLECTOR" href="side_reflector.html">
+        <area shape="rect" coords="173,66,212,100" alt="voi" title="FRONT REFLECTOR" href="front_reflector.html">
+        <area shape="rect" coords="173,107,213,183" alt="voi" title="INDICATOR CONTROLLER" href="indicator_controller.html">
+        <area shape="rect" coords="219,106,258,138" alt="voi" title="INDICATOR CONTROLLER COVER" href="indicator_controller.html">
+        <area shape="rect" coords="219,139,259,239" alt="voi" title="IOT" href="iot_v4.html">
+        <area shape="rect" coords="301,604,273,792" alt="voi" title="NECK TUBE" href="neck_tube.html">
+        <area shape="rect" coords="313,640,324,675" alt="voi" title="HOOK" href="hook.html">
+        <area shape="poly" coords="201,405,217,417,183,462,166,449" alt="voi" title="LONG FRONT BRAKE CABLE" href="long_front_brake_cable.html">
+        <area shape="poly" coords="242,431,252,449,198,481,187,463" alt="voi" title="LONG REAR BRAKE CABLE" href="long_rear_brake_cable.html">
+        <area shape="poly" coords="258,454,273,476,181,531,169,507" alt="voi" title="IOT CABLE" href="iot_cable.html">
+        <area shape="rect" coords="144,511,181,541" alt="voi" title="LOOSE NECK" href="loose_neck.html">
+        <area shape="rect" coords="136,534,175,585" alt="voi" title="ALU COLLAR" href="alu_collar.html">
+        <area shape="poly" coords="244,782,280,790,265,839,229,830" alt="voi" title="NECK TUBE COLLAR" href="neck_tube_collar.html">
+        <area shape="poly" coords="214,874,253,889,220,993,180,981" alt="voi" title="FRONT FORK" href="front_fork.html">
+      </map>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <button class="collapsible">IOT</button>
+      <div class="content">
+          <a href="iot_v4.html">IOT</a>
+          <a href="iot_reboot.html">IOT Reboot</a>
+          <a href="iot_cable.html">IOT Cable</a>
+          <a href="iot_shell_case.html">IOT Shell Case</a>
+          <!--<a href="v4.html">IOT/LOCATION PHYSICALLY DAMAGE</a>-->       
+      </div>
+  
+      <button class="collapsible">NECK</button>
+      <div class="content">
+        <a href="hook.html">Hook</a>
+        <a href="indicator_controller.html">Indicator Controller</a>     
+        <a href="front_reflector.html">Front Reflector</a>
+        <a href="neck_tube.html">Neck Tube</a>
+        <a href="neck_tube_collar.html">Neck Tube Collar</a>
+        <a href="side_reflector.html">Side Reflector</a>
+        <a href="long_front_brake_cable.html">Long Front Brake</a>
+        <a href="long_rear_brake_cable.html">Long Rear Brake</a>
+        <a href="loose_neck.html">Loose Neck</a>
+        <a href="alu_collar.html">Alu Collar</a>
+        <a href="steering_bearing.html">Steering Bearing</a>
+        <a href="steering_reinforcement_collar.html">Steering reinforcement</a>
+        <a href="front_fork.html">Front Fork</a>        
+      </div>
+      
+      <button class="collapsible">Error Code</button>
+      <div class="content">
+        <a href="side_reflector.html">Error 32</a>
+        <!--<a href="front_reflector.html">FRONT REFLECTOR</a>     
+        <a href="steering_bearing.html">STEERING BEARING</a>
+        <a href="v4.html">ABNORMAL MAX/MIN SPEED</a>-->
+      </div>
+
+    </div>
+  </div>
+  
+  <div span style="font-size:30px;cursor:pointer;left: 70%; display: flex; flex-wrap: wrap;" onclick="openNav()">&#9776;</span></div>
+</div>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.display = "block";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+  }
+  
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+  
+  
+
+  !function(){
+    "use strict";
+    function r(){
+      function e(){
+        var r={width:u.width/u.naturalWidth,height:u.height/u.naturalHeight},
+        a={width:parseInt(window.getComputedStyle(u,null).getPropertyValue("padding-left"),10),height:parseInt(window.getComputedStyle(u,null).getPropertyValue("padding-top"),10)};
+        i.forEach(function(e,t){var n=0;o[t].coords=e.split(",").map(function(e){var t=1==(n=1-n)?"width":"height";return a[t]+Math.floor(Number(e)*r[t])}).join(",")})}
+        function t(e){return e.coords.replace(/ *, */g,",").replace(/ +/g,",")}
+        function n(){clearTimeout(d),d=setTimeout(e,250)}
+        function r(e){return document.querySelector('img[usemap="'+e+'"]')}
+        var a=this,o=null,i=null,u=null,d=null;
+        "function"!=typeof a._resize?(o=a.getElementsByTagName("area"),
+        i=Array.prototype.map.call(o,t),u=r("#"+a.name)||r(a.name),a._resize=e,u.addEventListener("load",e,!1),
+        window.addEventListener("focus",e,!1),window.addEventListener("resize",n,!1),window.addEventListener("readystatechange",e,!1),document.addEventListener("fullscreenchange",e,!1),
+        u.width===u.naturalWidth&&u.height===u.naturalHeight||e()):a._resize()}
+        function e(){
+          function t(e){
+            e&&(!function(e){
+              if(!e.tagName)throw new TypeError("Object is not a valid DOM element");
+              if("MAP"!==e.tagName.toUpperCase())throw new TypeError("Expected <MAP> tag, found <"+e.tagName+">.")}
+                (e),r.call(e),n.push(e))}var n;return function(e){switch(n=[],typeof e){case"undefined":case"string":Array.prototype.forEach.call(document.querySelectorAll(e||"map"),t);
+                break;case"object":t(e);
+                break;default:throw new TypeError("Unexpected data type ("+typeof e+").")}return n}}
+                "function"==typeof define&&define.amd?define([],e):"object"==typeof module&&"object"==typeof module.exports?module.exports=e():window.imageMapResize=e(),"jQuery"in window&&(window.jQuery.fn.imageMapResize=function(){return this.filter("map").each(r).end()})}();
+//# sourceMappingURL=imageMapResizer.map
+
+imageMapResize();
+  </script>
+
+    </body>
+</html>

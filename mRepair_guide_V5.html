@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<head>
+<style>
+
+.w3-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px rgb(244, 108, 99);
+}
+
+.heading {
+     position: relative;
+    text-align: center;
+   font-family: "Montserrat" ; 
+   font-weight: 600;
+   font-size: 7vw; 
+   bottom: 1px;
+   color:rgb(255, 255, 255);
+   left: 12%; 
+    display: flex;
+    flex-wrap: wrap; 
+    border: 1px rgb(244, 108, 99);
+    }
+
+.top-left {
+  position: relative;
+  
+  width: 11%;
+  height: 11%;
+  top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.main-pic {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.btn-group button {
+  background-color: rgb(244, 108, 99);; /* Green background */
+  border: 1px rgb(244, 108, 99);; /* Green border */
+  padding-inline : 22.35%; /* Some padding */
+  color: white; /* White text */
+  font-family: "Montserrat" ;
+  font-weight: 600;font-size: 4vw;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: rgb(244, 108, 99);;
+}
+
+.bot {
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat" ; 
+  background-color: rgb(244, 108, 99);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  
+}
+
+.top-right {
+  text-decoration: none;
+  position: relative;
+   top: 25%;
+   width: auto;
+   height: 150%;
+  left: 26%;
+  font-size: 200%;
+  font-family: "Montserrat" ; 
+  font-weight: 600;
+  font-size:30px;
+  color: rgb(255, 255, 255);
+ 
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+  display: flex;
+    flex-wrap: wrap;
+    }
+
+  </style>
+  </head>
+  <body>
+   
+    <div style="padding-top: 1%;"></div>
+    <div class="w3-container" style="background-color: rgb(244, 108, 99);">
+   <img class="top-left" src="images\logo.png" alt="VOI">
+    <div class="heading"><b>Repair Guide</b> 
+      <button class="top-right"> <i class="fa" onclick="location.href = 'logout.php';">&#xf011;</i></button>
+    </div>
+    </div>
+    
+    <div class="btn-group">
+        <button onclick="v4func()">V4</button> <button onclick="v5func()">V5</button>
+        
+      </div> 
+    </div>
+    <div style="padding: 3%;"></div>
+  <div class="main-pic">
+  <img class="main-pic" usemap="#main" src="images/first_landing_mobil_v5.png" 
+    alt="VOI">
+    <map name="main">
+      <area shape="rect" coords="118,240,274,334" alt="voi" title="MIDDLE" href="?">
+      <area shape="rect" coords="123,8,183,71" alt="voi" title="HEAD" href="?">
+      <area shape="poly" coords="63,245,127,265,105,335,39,313" alt="voi" title="FRONT" href="?">
+      <area shape="poly" coords="140,65,180,75,120,260,80,250" alt="voi" href="?">
+      <area shape="rect" coords="275,256,345,325" alt="voi" title="" href="?">    
+    </map>
+  </div> 
+  
+  <div  class="bot" >
+    <p>&#169; 2022 <i>All rights reserved Voi Technology AB.</i>
+    <!--  <br>    Creators <a style="text-decoration: none; color:rgb(255, 255, 255);" href= "https://app.hibob.com/employee-profile/2338686568232910967"><b>Tommy Høeg</b></a> 
+    &<a href="https://app.hibob.com/employee-profile/2760433236394901522" style="text-decoration: none; color: rgb(255, 255, 255);"> <b>Karthik Lokesh</b></p>
+-->
+  </div>
+  
+    <script>
+      function v4func() {
+        location.replace("mRepair_guide.html") 
+      }
+      
+      function v5func() {
+        location.replace("mRepair_guide_V5.html")
+      }
+
+      !function(){
+    "use strict";
+    function r(){
+      function e(){
+        var r={width:u.width/u.naturalWidth,height:u.height/u.naturalHeight},
+        a={width:parseInt(window.getComputedStyle(u,null).getPropertyValue("padding-left"),10),height:parseInt(window.getComputedStyle(u,null).getPropertyValue("padding-top"),10)};
+        i.forEach(function(e,t){var n=0;o[t].coords=e.split(",").map(function(e){var t=1==(n=1-n)?"width":"height";return a[t]+Math.floor(Number(e)*r[t])}).join(",")})}
+        function t(e){return e.coords.replace(/ *, */g,",").replace(/ +/g,",")}
+        function n(){clearTimeout(d),d=setTimeout(e,250)}
+        function r(e){return document.querySelector('img[usemap="'+e+'"]')}
+        var a=this,o=null,i=null,u=null,d=null;
+        "function"!=typeof a._resize?(o=a.getElementsByTagName("area"),
+        i=Array.prototype.map.call(o,t),u=r("#"+a.name)||r(a.name),a._resize=e,u.addEventListener("load",e,!1),
+        window.addEventListener("focus",e,!1),window.addEventListener("resize",n,!1),window.addEventListener("readystatechange",e,!1),document.addEventListener("fullscreenchange",e,!1),
+        u.width===u.naturalWidth&&u.height===u.naturalHeight||e()):a._resize()}
+        function e(){
+          function t(e){
+            e&&(!function(e){
+              if(!e.tagName)throw new TypeError("Object is not a valid DOM element");
+              if("MAP"!==e.tagName.toUpperCase())throw new TypeError("Expected <MAP> tag, found <"+e.tagName+">.")}
+                (e),r.call(e),n.push(e))}var n;return function(e){switch(n=[],typeof e){case"undefined":case"string":Array.prototype.forEach.call(document.querySelectorAll(e||"map"),t);
+                break;case"object":t(e);
+                break;default:throw new TypeError("Unexpected data type ("+typeof e+").")}return n}}
+                "function"==typeof define&&define.amd?define([],e):"object"==typeof module&&"object"==typeof module.exports?module.exports=e():window.imageMapResize=e(),"jQuery"in window&&(window.jQuery.fn.imageMapResize=function(){return this.filter("map").each(r).end()})}();
+//# sourceMappingURL=imageMapResizer.map
+
+imageMapResize();
+</script>
+
+</body>
+</html>
