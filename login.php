@@ -1,6 +1,6 @@
 <?php
 session_start();
-$login=0;
+$login=1;
 $invalid=0;
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
