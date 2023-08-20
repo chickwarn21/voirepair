@@ -1,6 +1,6 @@
 <?php
 session_start();
-$success=0;
+$success=1;
 $user=0;
 $invalid=0;
 
